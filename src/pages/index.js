@@ -1,18 +1,17 @@
 import React from "react"
-import { Link } from "gatsby"
+import { ThemeProvider } from "styled-components"
 
-import Layout from "../components/layout"
-
+import Navbar from "../components/Navbar"
+import { theme } from "../config/theme"
 import SEO from "../components/seo"
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }} />
-  </Layout>
+  <ThemeProvider theme={theme}>
+    <React.Fragment>
+      <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+      <Navbar />
+    </React.Fragment>
+  </ThemeProvider>
 )
 
 export default IndexPage
